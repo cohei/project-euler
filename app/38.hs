@@ -1,6 +1,8 @@
 {-# OPTIONS_GHC -i.. #-} -- きかないのでghciで :set -i.. して
-import Util (digits)
 import Data.List (nub, maximum)
+
+import Utility (toDigits)
+
 {-
 "99" > "987" == True
 
@@ -16,15 +18,14 @@ n>1から
 -}
 
 concatnatedProduct :: Integer -> [Integer] -> [Integer]
-concatnatedProduct n ns = concat $ map digits $ map (n*) ns
+concatnatedProduct n ns = concat $ map toDigits $ map (n*) ns
 
 products = [ concatnatedProduct n ns | n <- [10..9999], ns <- [ [1..m] | m <- [1..4] ] ]
 
 isPandigital ns = ns == nub ns
 
-products' = filter isPandigital $ 
-            filter ((9==) . length) $ 
+products' = filter isPandigital $
+            filter ((9==) . length) $
             filter (0 `notElem`) products
 
 main = putStrLn $ concatMap show $ maximum products'
-

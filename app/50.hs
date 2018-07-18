@@ -1,5 +1,5 @@
 import Data.List
-import Data.Numbers.Primes
+import Data.Numbers.Primes hiding (isPrime)
 
 con n = transpose $ take n $ tails primes
 -- nが偶数のとき、2を含むものだけが素数の可能性がある(和が奇数になる)

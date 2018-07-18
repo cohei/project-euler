@@ -1,5 +1,5 @@
 import Data.List
-import Data.Numbers.Primes
+import Data.Numbers.Primes (primes)
 
 primeFactors 1 = []
 primeFactors n = smallest : primeFactors (div n smallest)

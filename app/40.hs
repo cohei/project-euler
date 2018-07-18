@@ -1,7 +1,6 @@
--- -i..  してください
-import Util
+import Utility (toDigits)
 
-frac = concatMap digits [1..]
+frac = concatMap toDigits [1..]
 
 proc = product $ map ((frac !!) . (subtract 1) . (10^)) [0..6]
 

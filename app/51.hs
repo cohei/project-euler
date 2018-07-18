@@ -1,8 +1,8 @@
 import Data.Bool.Extras ( bool )
-import Data.List 
+import Data.List (group, sort)
 import Data.Numbers.Primes
 
-import Util
+import Utility (toDigits, fromDigits)
 
 -- 同じ数字の桁の数字を換えるため、
 -- 1の位は換えない。なぜなら、素数であるためには奇数でなくてはならず、
@@ -35,7 +35,7 @@ primesWith3Digits = filter hasSame3Digits . dropWhile (1110 >) $ primes
 
 hasProperReplacement :: Int -> Bool
 hasProperReplacement = (8 <=) . length . filter isPrime . replace3Digits
-               
+
 main :: IO ()
 main = print . head . filter hasProperReplacement $ primesWith3Digits
 -- == 121313

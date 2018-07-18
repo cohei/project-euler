@@ -1,0 +1,202 @@
+name: project-euler
+version: 0.1.0.0
+github: "cohei/project-euler"
+license: BSD3
+author: "TANIGUCHI Kohei"
+maintainer: "a.d.xvii.kal.mai@gmail.com"
+copyright: "2018 TANIGUCHI Kohei"
+
+extra-source-files:
+  - README.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description: Please see the README on GitHub at <https://github.com/cohei/euler#readme>
+
+dependencies:
+  - base >= 4.7 && < 5
+  - array
+  - bool-extras
+  - containers
+  - memoize
+  - mtl
+  - primes
+  - utility
+
+library:
+  source-dirs: src
+
+executables:
+  answer01:
+    source-dirs: app
+    main: 01.hs
+  answer02:
+    source-dirs: app
+    main: 02.hs
+  answer03:
+    source-dirs: app
+    main: 03.hs
+  answer04:
+    source-dirs: app
+    main: 04.hs
+  answer07:
+    source-dirs: app
+    main: 07.hs
+  answer08:
+    source-dirs: app
+    main: 08.hs
+  answer09:
+    source-dirs: app
+    main: 09.hs
+  answer10:
+    source-dirs: app
+    main: 10.hs
+  answer11:
+    source-dirs: app
+    main: 11.hs
+  answer12:
+    source-dirs: app
+    main: 12.hs
+  answer13:
+    source-dirs: app
+    main: 13.hs
+  answer14:
+    source-dirs: app
+    main: 14.hs
+  answer16:
+    source-dirs: app
+    main: 16.hs
+  answer17:
+    source-dirs: app
+    main: 17.hs
+  answer18:
+    source-dirs: app
+    main: 18.hs
+  answer19:
+    source-dirs: app
+    main: 19.hs
+  answer20:
+    source-dirs: app
+    main: 20.hs
+  answer21:
+    source-dirs: app
+    main: 21.hs
+  answer22:
+    source-dirs: app
+    main: 22.hs
+  answer23:
+    source-dirs: app
+    main: 23.hs
+  answer24:
+    source-dirs: app
+    main: 24.hs
+  answer25:
+    source-dirs: app
+    main: 25.hs
+    dependencies:
+      - project-euler
+  answer26:
+    source-dirs: app
+    main: 26.hs
+  answer27:
+    source-dirs: app
+    main: 27.hs
+  answer28:
+    source-dirs: app
+    main: 28.lhs
+  answer29:
+    source-dirs: app
+    main: 29.hs
+  answer30:
+    source-dirs: app
+    main: 30.hs
+  answer31:
+    source-dirs: app
+    main: 31.hs
+    dependencies:
+      - project-euler
+  answer32:
+    source-dirs: app
+    main: 32.hs
+  answer33:
+    source-dirs: app
+    main: 33.hs
+  answer34:
+    source-dirs: app
+    main: 34.hs
+  answer35:
+    source-dirs: app
+    main: 35.hs
+  answer36:
+    source-dirs: app
+    main: 36.hs
+  answer37:
+    source-dirs: app
+    main: 37.hs
+  answer38:
+    source-dirs: app
+    main: 38.hs
+  answer39:
+    source-dirs: app
+    main: 39.hs
+  answer40:
+    source-dirs: app
+    main: 40.hs
+  answer41:
+    source-dirs: app
+    main: 41.hs
+  answer42:
+    source-dirs: app
+    main: 42.hs
+  answer43:
+    source-dirs: app
+    main: 43.hs
+  answer44:
+    source-dirs: app
+    main: 44.hs
+  answer45:
+    source-dirs: app
+    main: 45.hs
+  answer46:
+    source-dirs: app
+    main: 46.hs
+  answer47:
+    source-dirs: app
+    main: 47.hs
+  answer48:
+    source-dirs: app
+    main: 48.hs
+  answer49:
+    source-dirs: app
+    main: 49.hs
+  answer50:
+    source-dirs: app
+    main: 50.hs
+  answer51:
+    source-dirs: app
+    main: 51.hs
+  answer52:
+    source-dirs: app
+    main: 52.hs
+  answer53:
+    source-dirs: app
+    main: 53.hs
+  answer54:
+    source-dirs: app
+    main: 54.hs
+
+tests:
+  euler-test:
+    main: Spec.hs
+    source-dirs: test
+    ghc-options:
+      - -threaded
+      - -rtsopts
+      - -with-rtsopts=-N
+    dependencies:
+      - project-euler

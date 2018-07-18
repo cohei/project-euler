@@ -1,5 +1,5 @@
-import Data.List
-import Data.Numbers.Primes
+import Data.List (permutations)
+import Data.Numbers.Primes (primes)
 
 pan n = map (foldl1 ((+) . (10*))) $ permutations [1..n]
 

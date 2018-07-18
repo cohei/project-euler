@@ -5,7 +5,7 @@ ns' = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08 \n 49 49 99 4
 ns :: [[Int]]
 ns = map (map read . words) $ lines ns'
 
-product0 :: Num a => [a] -> a
+product0 :: (Eq a, Num a) => [a] -> a
 product0 [] = 1
 product0 (0:_)  = 0
 product0 (n:ns) = n * product0 ns
@@ -17,7 +17,7 @@ dia :: [[Int]] -> [[Int]]
 dia ns = transpose $ zipWith (++) (map (flip replicate 0) [0..]) ns
 
 main :: IO ()
-main = print . maximum . map product0 . concatMap fourLists $ ns 
-                                                           ++ transpose ns 
-                                                           ++ dia ns 
+main = print . maximum . map product0 . concatMap fourLists $ ns
+                                                           ++ transpose ns
+                                                           ++ dia ns
                                                            ++ dia (reverse ns)

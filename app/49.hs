@@ -2,12 +2,14 @@ import Data.Function
 import Data.Numbers.Primes
 import Data.List
 import Data.Ord
-import Util
+
+import Utility (toDigits)
 
 primes' = takeWhile (10000>) $ dropWhile (1000>) primes -- 4 digits
 
 part = groupBy ((==) `on` f) . sortBy (comparing f)
-    where f = sort . digits
+  where
+    f = sort . toDigits
 
 defor = filter ((3<=) . length)
 
@@ -17,5 +19,5 @@ p (x,y,z) = z-y == y-x
 
 tri2ls (x,y,z) = [x,y,z]
 
-main = putStrLn $ concatMap show $ tri2ls $ 
+main = putStrLn $ concatMap show $ tri2ls $
        head $ filter ((1487,4817,8147)/=) $ filter p $ concatMap tup3 $ defor $ part primes'

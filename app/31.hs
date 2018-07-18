@@ -1,5 +1,7 @@
 import qualified Data.Map as M
 import Data.Function
+import Data.Function.Memoize
+
 import Memo
 
 coins :: [Int]
@@ -29,7 +31,7 @@ mmake :: Table t => Memo t (Int,[Int]) Int
 mmake = gfun memoise makeFU
 
 e :: M.Map (Int,[Int]) Int
-e = emptyTable 
+e = emptyTable
 
 run = curry (evalMemo mmake e)
 
