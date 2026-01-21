@@ -9,7 +9,7 @@ primes' = takeWhile (10000>) $ dropWhile (1000>) primes -- 4 digits
 
 part = groupBy ((==) `on` f) . sortBy (comparing f)
   where
-    f = sort . toDigits
+    f = sort . toDigits 10
 
 defor = filter ((3<=) . length)
 

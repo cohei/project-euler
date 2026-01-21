@@ -17,14 +17,14 @@ type Digits = [Int]
 
 hasSame3Digits :: Int -> Bool -- which is smaller than 3
 hasSame3Digits = elem 3 . map length . group . sort . filter (2 >=) .
-                 init . toDigits
+                 init . toDigits 10
 
 replace3Digits :: Int -> [Int]
 replace3Digits n
     | d > 2     = []
-    | otherwise = n : map (\to -> fromDigits $ replace d to ns) [d+1..9]
+    | otherwise = n : map (\to -> fromDigits 10 $ replace d to ns) [d+1..9]
     where
-      ns = toDigits n
+      ns = toDigits 10 n
       d = head . head . filter ((3==) . length) . group . sort . init $ ns
 
 replace :: Int -> Int -> Digits -> Digits

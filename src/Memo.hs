@@ -29,12 +29,12 @@ instance (Table t, Ord a, Num b, Show b) => Show (State (t a b) b) where
     show sx = show (evalState sx emptyTable)
 
 instance (Table t, Ord a, Num b) => Num (State (t a b) b) where
-    (+) = liftM2 (+)
-    (-) = liftM2 (-)
-    (*) = liftM2 (*)
-    negate = liftM negate
-    abs    = liftM abs
-    signum = liftM signum
+    (+) = liftA2 (+)
+    (-) = liftA2 (-)
+    (*) = liftA2 (*)
+    negate = fmap negate
+    abs    = fmap abs
+    signum = fmap signum
     fromInteger = return . fromInteger
 
 type Memo t a b = a -> State (t a b) b

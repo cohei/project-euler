@@ -1,0 +1,13 @@
+packages: .
+
+source-repository-package
+  type: git
+  location: https://github.com/cohei/haskell-utility.git
+  branch: master
+
+source-repository-package
+  type: git
+  location: https://github.com/tov/memoize.git
+  -- Fix the compilation with GHC 9.8.1
+  -- https://github.com/tov/memoize/pull/18
+  tag: refs/pull/18/head

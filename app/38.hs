@@ -18,7 +18,7 @@ n>1から
 -}
 
 concatnatedProduct :: Integer -> [Integer] -> [Integer]
-concatnatedProduct n ns = concat $ map toDigits $ map (n*) ns
+concatnatedProduct n ns = concat $ map (toDigits 10) $ map (n*) ns
 
 products = [ concatnatedProduct n ns | n <- [10..9999], ns <- [ [1..m] | m <- [1..4] ] ]
 

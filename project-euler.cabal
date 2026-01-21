@@ -1,0 +1,251 @@
+cabal-version: 3.8
+name: project-euler
+version: 0.1.0.0
+description: Please see the README on GitHub at <https://github.com/cohei/euler#readme>
+homepage: https://github.com/cohei/project-euler#readme
+bug-reports: https://github.com/cohei/project-euler/issues
+author: TANIGUCHI Kohei
+maintainer: a.d.xvii.kal.mai@gmail.com
+copyright: 2018 TANIGUCHI Kohei
+license: BSD-3-Clause
+build-type: Simple
+extra-source-files:
+  README.md
+
+source-repository head
+  type: git
+  location: https://github.com/cohei/project-euler
+
+common depends-base
+  build-depends: base >=4.7 && <5
+
+common exe-common
+  import: depends-base
+  hs-source-dirs: app
+  build-depends:
+    array,
+    bool-extras,
+    containers,
+    memoize,
+    mtl,
+    primes,
+    utility,
+
+library
+  import: depends-base
+  hs-source-dirs: src
+  exposed-modules: Memo
+  build-depends:
+    containers,
+    mtl,
+
+executable answer01
+  import: exe-common
+  main-is: 01.hs
+
+executable answer02
+  import: exe-common
+  main-is: 02.hs
+
+executable answer03
+  import: exe-common
+  main-is: 03.hs
+
+executable answer04
+  import: exe-common
+  main-is: 04.hs
+
+executable answer07
+  import: exe-common
+  main-is: 07.hs
+
+executable answer08
+  import: exe-common
+  main-is: 08.hs
+
+executable answer09
+  import: exe-common
+  main-is: 09.hs
+
+executable answer10
+  import: exe-common
+  main-is: 10.hs
+
+executable answer11
+  import: exe-common
+  main-is: 11.hs
+
+executable answer12
+  import: exe-common
+  main-is: 12.hs
+
+executable answer13
+  import: exe-common
+  main-is: 13.hs
+
+executable answer14
+  import: exe-common
+  main-is: 14.hs
+
+executable answer16
+  import: exe-common
+  main-is: 16.hs
+
+executable answer17
+  import: exe-common
+  main-is: 17.hs
+
+executable answer18
+  import: exe-common
+  main-is: 18.hs
+
+executable answer19
+  import: exe-common
+  main-is: 19.hs
+
+executable answer20
+  import: exe-common
+  main-is: 20.hs
+
+executable answer21
+  import: exe-common
+  main-is: 21.hs
+
+executable answer22
+  import: exe-common
+  main-is: 22.hs
+
+executable answer23
+  import: exe-common
+  main-is: 23.hs
+
+executable answer24
+  import: exe-common
+  main-is: 24.hs
+
+executable answer25
+  import: exe-common
+  main-is: 25.hs
+  build-depends: project-euler
+
+executable answer26
+  import: exe-common
+  main-is: 26.hs
+
+executable answer27
+  import: exe-common
+  main-is: 27.hs
+
+executable answer28
+  import: exe-common
+  main-is: 28.lhs
+
+executable answer29
+  import: exe-common
+  main-is: 29.hs
+
+executable answer30
+  import: exe-common
+  main-is: 30.hs
+
+executable answer31
+  import: exe-common
+  main-is: 31.hs
+  build-depends: project-euler
+
+executable answer32
+  import: exe-common
+  main-is: 32.hs
+
+executable answer33
+  import: exe-common
+  main-is: 33.hs
+
+executable answer34
+  import: exe-common
+  main-is: 34.hs
+
+executable answer35
+  import: exe-common
+  main-is: 35.hs
+
+executable answer36
+  import: exe-common
+  main-is: 36.hs
+
+executable answer37
+  import: exe-common
+  main-is: 37.hs
+
+executable answer38
+  import: exe-common
+  main-is: 38.hs
+
+executable answer39
+  import: exe-common
+  main-is: 39.hs
+
+executable answer40
+  import: exe-common
+  main-is: 40.hs
+
+executable answer41
+  import: exe-common
+  main-is: 41.hs
+
+executable answer42
+  import: exe-common
+  main-is: 42.hs
+
+executable answer43
+  import: exe-common
+  main-is: 43.hs
+
+executable answer44
+  import: exe-common
+  main-is: 44.hs
+
+executable answer45
+  import: exe-common
+  main-is: 45.hs
+
+executable answer46
+  import: exe-common
+  main-is: 46.hs
+
+executable answer47
+  import: exe-common
+  main-is: 47.hs
+
+executable answer48
+  import: exe-common
+  main-is: 48.hs
+
+executable answer49
+  import: exe-common
+  main-is: 49.hs
+
+executable answer50
+  import: exe-common
+  main-is: 50.hs
+
+executable answer51
+  import: exe-common
+  main-is: 51.hs
+
+executable answer52
+  import: exe-common
+  main-is: 52.hs
+
+executable answer53
+  import: exe-common
+  main-is: 53.hs
+
+executable answer54
+  import: exe-common
+  main-is: 54.hs
+
+test-suite euler-test
+  import: depends-base
+  hs-source-dirs: test
+  main-is: Spec.hs
