@@ -1,4 +1,4 @@
-{-# language FlexibleInstances, TypeSynonymInstances #-}
+{-# LANGUAGE FlexibleInstances #-}
 module Memo where
 
 import Control.Monad.State
@@ -46,7 +46,7 @@ memoise mf x = do prev <- find x
                     Nothing -> do y <- mf x
                                   ins x y
                                   return y
-    where find x = get >>= return . lookupTable x
+    where find x = gets $ lookupTable x
           ins x y = get >>= put . insertTable x y
 
 runMemo :: (Table t, Ord a) => Memo t a b -> t a b -> a -> (b, t a b)
@@ -59,5 +59,5 @@ execMemo :: (Table t, Ord a) => Memo t a b -> t a b -> a -> t a b
 execMemo m t v = execState (m v) t
 
 memoMap :: (Table t, Ord a) => t a b -> Memo t a b -> [a] -> [b]
-memoMap e mf xs = snd $ L.mapAccumL ((swap .) . (flip (runState . mf))) e xs
+memoMap e mf xs = snd $ L.mapAccumL ((swap .) . flip (runState . mf)) e xs
     where swap (x,y) = (y,x)
